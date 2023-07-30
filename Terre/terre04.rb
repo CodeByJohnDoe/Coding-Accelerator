@@ -2,14 +2,14 @@
 
 
 class Peer
-    attr_accessor   :argument, :numbers, :type
+    attr_accessor   :argument, :type
 
 
     def compare
     
     @argument   = ARGV[0].to_i
 
-        if (ARGV[0] =~ @numbers ) == nil
+        if !/\A[-+]?\d+\z/.match(ARGV[0])
             puts "Tu ne me la mettra pas à l'envers."       
   
         else  
@@ -27,6 +27,5 @@ end
 if __FILE__ == $0 
     pe = Peer.new
 
-    pe.numbers   = /[0-9]/
     pe.compare  
 end

@@ -1,29 +1,32 @@
 
  # Time :  15 min
 
- class Division
-    attr_accessor   :dividend, :divider, :result, :rest
-    def division
+ class Reverse
+    attr_accessor   :in, :out, :size, :index
 
-        @dividend   = ARGV[0].to_i
-        @divider    = ARGV[1].to_i
+    def reverse
 
-        if (@divider == 0) || (@dividend < @divider) 
-            puts "erreur."
+    @in     = ARGV.first.split(//)
+    @size   = @in.length
+    @index  = 1
+
+    until  @index > @size
+
+        @out  = @out.add(@in[(@size - @index)])
+        @index += 1
+        puts "eees"
+    end
         
-        else
-            @result = @dividend / @divider
-            @rest   = @dividend - (@result * @divider)
-
-            puts "résultat : #{@result}"
-            puts "reste    : #{@rest}"
-        end
+    puts "#{ARGV}"
+    puts "#{@in}"
+    puts "#{@size}"
+    puts "#{@out}"
     end
 end
 
 if __FILE__ == $0 
-    dv = Division.new
+    rv = Reverse.new
 
-    dv.division
+    rv.reverse 
 
 end
