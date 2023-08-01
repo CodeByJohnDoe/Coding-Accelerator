@@ -9,18 +9,14 @@
     @in     = ARGV.first.split(//)
     @size   = @in.length
     @index  = 1
+    @out    = []
 
-    until  @index > @size
-
-        @out  = @out.add(@in[(@size - @index)])
-        @index += 1
-        puts "eees"
-    end
+        until  @index > @size
+            out.push(@in[@size - @index])
+            @index += 1
+        end
         
-    puts "#{ARGV}"
-    puts "#{@in}"
-    puts "#{@size}"
-    puts "#{@out}"
+    puts "#{@out.join}"
     end
 end
 
