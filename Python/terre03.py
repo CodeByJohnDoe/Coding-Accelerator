@@ -1,6 +1,6 @@
 # Alphabet Start     
         
-# Time = 30 min    
+# Time = 20 min    
 # Date = 29 aout 2023
 
 # Import listing Char Ascii
