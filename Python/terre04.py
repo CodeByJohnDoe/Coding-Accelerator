@@ -5,9 +5,7 @@
 
 # Import listing Char Ascii
 
-import string 
 import sys         
-import numbers
 
 
 if len(sys.argv)  != 2:

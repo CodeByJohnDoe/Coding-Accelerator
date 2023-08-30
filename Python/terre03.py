@@ -5,7 +5,6 @@
 
 # Import listing Char Ascii
 
-import string 
 import sys         
 
 a   = 97
