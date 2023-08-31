@@ -1,7 +1,7 @@
-# Reverse string
+# Prime Number
         
-# Time = 4 h
-# Date = 30 aout 2023
+# Time = 1 h
+# Date = 31 aout 2023
 
 import sys
 
@@ -13,3 +13,8 @@ for i in range (Size) :
     List.insert(0,In[i])
 
 print("Reverse  of ",sys.argv[1],' : ' ,''.join(List))
+
+
+
+print("Oui, ",sys.argv[1]," est un nombre premier")
+print("Non, ",sys.argv[1]," est un nombre premier")

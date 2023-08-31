@@ -1,15 +1,31 @@
-# Reverse string
+# Square root 
         
-# Time = 4 h
-# Date = 30 aout 2023
+# Time = 2 h
+# Date = 31 aout 2023
 
 import sys
+import math
 
-In        = list(sys.argv[1])
-List      = []
-Size      = len(In)
+Len         = len(sys.argv)
+Check       = sys.argv[1].isdigit()
 
-for i in range (Size) :
-    List.insert(0,In[i])
+print(Check)
 
-print("Reverse  of ",sys.argv[1],' : ' ,''.join(List))
+
+if len(sys.argv) == 2 and Check == True:
+    
+    Num1        = sys.argv[1].isnumeric()    
+    Argv1       = int(sys.argv[1])
+
+    if int(Num1) > 0 :
+        
+        Out     = math.pow(Argv1, 0.5)   
+        print(Out)
+
+    else :
+        print('erreur. The digit must me upper thant 0')
+
+else :
+    print("erreur. only digit")
+
+    
