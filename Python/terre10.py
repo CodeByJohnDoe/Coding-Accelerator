@@ -1,20 +1,32 @@
 # Prime Number
         
-# Time = 1 h
-# Date = 31 aout 2023
+# Time = 3 h
+# Date = 1 september 2023
 
 import sys
 
-In        = list(sys.argv[1])
-List      = []
-Size      = len(In)
+def check_Prime(In) :
 
-for i in range (Size) :
-    List.insert(0,In[i])
+    if In > 1 and In % 2 == 1:
+        i=2
+        for i in range(2,In-1) :
+                
+            if (In % i) == 0 :
+                return False
+        else :
+            return True
+        
+    elif In == 2:
+        return True
+    else :
+        return False  
 
-print("Reverse  of ",sys.argv[1],' : ' ,''.join(List))
-
-
-
-print("Oui, ",sys.argv[1]," est un nombre premier")
-print("Non, ",sys.argv[1]," est un nombre premier")
+if len(sys.argv) == 2 and sys.argv[1].isdigit() == True:
+    In     = int(sys.argv[1])
+        
+    if check_Prime(In) == True :
+        print("Oui, ",sys.argv[1]," est un nombre premier")
+    else :  
+        print("Non, ",sys.argv[1]," n'est pas un nombre premier")
+else :
+    print ("Fail type or no enough argument")    
