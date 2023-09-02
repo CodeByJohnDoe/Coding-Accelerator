@@ -8,7 +8,7 @@ import sys
 def check_Prime(In) :
 
     if In > 1 and In % 2 == 1:
-        i=2
+
         for i in range(2,In-1) :
                 
             if (In % i) == 0 :
