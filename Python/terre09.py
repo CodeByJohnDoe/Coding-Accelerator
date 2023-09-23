@@ -9,8 +9,6 @@ import math
 Len         = len(sys.argv)
 Check       = sys.argv[1].isdigit()
 
-print(Check)
-
 
 if len(sys.argv) == 2 and Check == True:
     
@@ -20,7 +18,7 @@ if len(sys.argv) == 2 and Check == True:
     if int(Num1) > 0 :
         
         Out     = math.pow(Argv1, 0.5)   
-        print(Out)
+        print(int(Out))
 
     else :
         print('erreur. The digit must me upper thant 0')
