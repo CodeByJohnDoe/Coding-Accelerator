@@ -10,7 +10,6 @@ if len(sys.argv) > 1 :
     
     Size    = len(sys.argv)
     Num     = sys.argv[1].isnumeric()
-    print(Num)
 
     if Size == 2 :
         
