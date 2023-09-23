@@ -36,18 +36,19 @@ if len(sys.argv) == 2 and check_format() == True :
     List    = sys.argv[1].split(":")
     Mod     = [0,List[1],0]
     Out     = ''
-
+        
+    if int(List[0]) == 0 or int(List[0]) == 12 :
+        Mod[0] = 12
+    else :
+        Mod[0] = List[0]
+        
     if int(List[0]) >= 12 :
         Mod[0] = int(List[0]) - 12
         Mod[2] = 'PM'
     else :
         Mod[0] = List[0]
         Mod[2] = 'AM'
-        
-    if int(List[0]) == 0 or int(List[0]) == 12 :
-        Mod[0] = 12
-    else :
-        Mod[0] = List[0]
+
         
     print(Mod[0], end=':') 
     print(Mod[1], end='')
