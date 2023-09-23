@@ -1,15 +1,58 @@
-# Reverse string
+# Sort or Not 
         
-# Time = 4 h
-# Date = 30 aout 2023
+# Date = 11 spetember 2023 arrêet pour caause de finance 
+# Reprise le 23 september 2023  time = 1h
 
 import sys
 
-In        = list(sys.argv[1])
-List      = []
-Size      = len(In)
+def Check_Digit() :
+    
+    List = []
+    
+    for i in range(1,len(sys.argv)) :
+        
+        List.append(sys.argv[i].isdigit())
+            
+    if all(List) == True :        
+        return True
+    
+    elif all(List) == False :
+        return False
 
-for i in range (Size) :
-    List.insert(0,In[i])
 
-print("Reverse  of ",sys.argv[1],' : ' ,''.join(List))
+def Check_Sort() :
+            
+    List = []
+    
+    for i in range (1, len(sys.argv)) :
+        List.append(sys.argv[i])
+ 
+    for i in range(1, len(List)): 
+   
+            a = List[i] 
+   
+            j = i - 1 
+            
+            if List[j] < List[i]:
+                List.append(True)  
+            else :
+                List.append(False)                
+                
+                    
+    if all(List) == True :        
+        return True
+    
+    else:
+        return False
+
+
+if Check_Digit() == True and len(sys.argv) > 1:
+
+    if Check_Sort() == True:
+        print('Triée !')        
+        
+    elif Check_Digit() == True:
+        print('Pas triée !')
+
+else:
+    print('erreur.') 

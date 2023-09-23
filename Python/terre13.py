@@ -1,7 +1,7 @@
 # Switzerland
         
 # Time = 3 h
-# Date = 2 spetember 2023
+# Date = 2 september 2023
 
 import sys
 
@@ -70,7 +70,7 @@ if len(sys.argv) == 4 and Check_Digit() == True:
         Out = Check_Sort()[round((len(sys.argv))/2)-1]
         print(Out)
         
-    elif Check_Egal() == False:
+    else:
         print('erreur.')
         
 else:
