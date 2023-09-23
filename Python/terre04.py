@@ -15,6 +15,7 @@ else :
     check   = In.isdigit()
     
 if check == True :
+    In = int(In)
     if   In % 2 == 0 :
         print ("pair")
         
