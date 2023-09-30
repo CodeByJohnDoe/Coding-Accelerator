@@ -1,46 +1,20 @@
 # different number sequences
         
-# Time = 16h01 - 
-# Date = 23 september 2023
+# Time = 2h + 1h
+# Date = 23 & 26 september 2023
 
-import sys
 
-List_out = []
-
-# F S T Ag Afs Aft Ast
-
-List_number = list(range(10))
-
-Dict_temp = {}
-
-for f in range (10) :
+def sequence():    
     
-    Dict_temp["F"] = f
+    list_number = []
     
-    List_number_s = List_number
-    List_number_s.remove(f)    
+    for i in range (10) :
+        for j in range (10) :
+            for k in range (10) :
+                if i < j < k and i != j != k :
+ 
+                    list_number.append(f"{i}{j}{k}")
+                    
+    print (', '.join(map(str, list_number)))
     
-    for s in range (1, List_number_s) :
-        
-
-        
-        Dict_temp["S"] = s
-        
-        List_number_t = List_number_s
-        List_number_t.remove(s)       
-         
-        for t in range (10) :
-            
-
-            Dict_temp["T"] = t
-            
-            
-            List_out.append(Dict_temp)
-            
-
-    
-print(List_out)
-
-
-
-# print("list without key only value dict")
+sequence()
