@@ -1,14 +1,9 @@
 # Comparator String
         
-# Time = 12h38
+# Time = 3h
 # Date = 30 september 2023
-# 
-
 
 import sys
-
-
-
 
 def Comparator_String() :
     error_arg = "error"
