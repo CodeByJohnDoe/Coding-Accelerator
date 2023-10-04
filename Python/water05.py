@@ -1,13 +1,13 @@
 # Comparator String
         
-# Time = 3h + 10 min to export
+# Time = 3h + 2 h to export erreur "False" instead of False
 # Date = 30 september 2023
 
 import sys
 
 def Comparator_String(to_be_compared, to_be_confronted) :
     error_arg = "error"
-    error_not_found = "False"
+    error_not_found = False
     
     #if len(sys.argv) == 3 :
     to_be_compared = list(str(to_be_compared))   #    to_be_compared = list(str(sys.argv[1]))
@@ -34,7 +34,7 @@ def Comparator_String(to_be_compared, to_be_confronted) :
                 i = 0
                 
     if comparator == to_be_confronted :
-        return("True") # print
+        return(True) # print
                                 
     else :
             return(error_not_found) #print

@@ -5,7 +5,7 @@
 # Import water 8
 
 import sys
-from water08 import Check_Digit
+from water08 import Is_Digit
 
 def Min_Max() :
 
@@ -13,10 +13,8 @@ def Min_Max() :
 
     if len(sys.argv) == 3 :
         
-        argv1 = 1
-        argv2 = 2
-        is_digit_argv1 = Check_Digit(argv1)
-        is_digit_argv2 = Check_Digit(argv2)  
+        is_digit_argv1 = Is_Digit(sys.argv[1])
+        is_digit_argv2 = Is_Digit(sys.argv[2])  
             
         
         if is_digit_argv1 == True and is_digit_argv2 == True :

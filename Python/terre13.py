@@ -42,36 +42,3 @@ def Check_Egal() :
     
     else:
         return False
-
-def Check_Sort() :
-            
-    List = []
-    
-    for i in range (1, len(sys.argv)) :
-        List.append(sys.argv[i])
-    
-    for i in range(1, len(List)): 
-   
-            a = List[i] 
-   
-            j = i - 1 
-           
-            while j >= 0 and a < List[j]: 
-                List[j + 1] = List[j] 
-                j -= 1 
-                 
-            List[j + 1] = a 
-    
-    return List
-
-if len(sys.argv) == 4 and Check_Digit() == True:
-
-    if Check_Egal() == True: 
-        Out = Check_Sort()[round((len(sys.argv))/2)-1]
-        print(Out)
-        
-    else:
-        print('erreur.')
-        
-else:
-    print('erreur.')
