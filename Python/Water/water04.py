@@ -1,4 +1,4 @@
-# Fibonacci sequence
+# Fibonacci Prime Number
         
 # Time = 30min
 # Date = 30 september 2023

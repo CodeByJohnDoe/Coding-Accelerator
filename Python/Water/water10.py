@@ -21,13 +21,13 @@ def Index_Wanted() :
         
        for i in range (start_argv, len(sys.argv)-1) :
 
-        to_be_compared.append(sys.argv[i])
-        result_comparator = Comparator_String(to_be_compared[-1], to_be_confronted)
+            to_be_compared.append(sys.argv[i])
+            result_comparator = Comparator_String(to_be_compared[-1], to_be_confronted)
        
-        if result_comparator == True : 
+            if result_comparator == True : 
                 solution = len(to_be_compared)
                 print(solution)
-        i += 1
+            i += 1
 
     else :
         exit(message_error)

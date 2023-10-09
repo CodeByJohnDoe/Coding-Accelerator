@@ -1,6 +1,5 @@
 
-# Time =  30 min
-
+# If export lib, change name def to lowercase
 
 import sys
 
@@ -33,7 +32,6 @@ def Is_Letter(argv) :
     
     elif all(List) == False :
         return False
-
 
 def Exclude (string_in, exclude_list_ascii) : 
     list_string_in = list(string_in)
@@ -96,4 +94,75 @@ def Select_Sort(list) :
             
     return(' '.join(list))   
 
- 
+def split(argv, rule_to_split_in_ascii) :
+    n = len(argv)
+    list_input = list(argv)
+    list_input.append(" ") # Extend i range
+    list_input.append('.') # Extend i range
+    split = []
+    split_cursor = 0
+    split_tempo = '' 
+    split_output = []
+    
+    for i in range(0,n+1) :
+
+        while ord(list_input[i]) in rule_to_split_in_ascii :
+            split = []                   
+            
+            for j in range(split_cursor, i) :
+                split.append(list_input[j])
+                j += 1
+                
+            split_cursor = i+1
+            
+            if split_cursor != n :
+                split_output.append(''.join(split))
+                split = []
+                
+            i += 1
+            
+    return split_output
+
+# Dependence = index()
+def comparator_string(to_be_compared, to_be_confronted) :
+    error_not_found = False
+    
+    to_be_compared = list(str(to_be_compared))   
+    to_be_confronted = list(str(to_be_confronted))
+    to_be_compared_len = len(to_be_compared)
+    to_be_confronted_len = len(to_be_confronted)
+    comparator = []
+    i = len(comparator) 
+
+    if to_be_compared_len >= to_be_confronted_len and comparator != to_be_confronted and len(comparator) >= i:
+
+        while i != len(to_be_compared) and to_be_confronted_len > i:
+            
+            if to_be_compared[i] == to_be_confronted[i] :
+                comparator.append(to_be_confronted[i])
+                i += 1    
+
+            else :
+                if i == 0 :
+                    i += 1 
+                    
+                to_be_compared = to_be_compared[i:]
+                comparator = []
+                i = 0
+                
+    if comparator == to_be_confronted :
+        return(True)
+                                
+    else :
+        return(error_not_found)
+
+def index(to_be_compared, to_be_confronted) :
+    for i in range (len(to_be_compared)) :
+
+    
+        if to_be_compared[i] == to_be_confronted : 
+            return i
+    return -1
+
+#def split_moise(to_be_compared, to_be_confronted) :
+    

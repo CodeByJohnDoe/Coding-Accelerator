@@ -10,7 +10,7 @@ def Absolute_Min_Difference() :
     message_error = "error"
 
     value_imput = []
-    exclude_list_ascii = [45]
+    exclude_list_ascii = [45] # exlude - 
   
     for i in range(1, len(sys.argv)) :
         value_imput.append(Exclude(sys.argv[i], exclude_list_ascii))
