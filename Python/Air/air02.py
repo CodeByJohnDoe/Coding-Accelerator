@@ -1,20 +1,27 @@
-# different number sequences
+# Concat
         
-# Time = 2h + 1h
-# Date = 23 & 26 september 2023
+# Time = 10 min
+# Date = 8 october 2023
 
+import sys
+sys.path.append("/home/uf/Desktop/Coding Accelerator/Python")
+from unbuilt_function import my_concat
 
-def sequence():    
+def concat_exemple() :
+    message_error = "error"
+    to_be_concat = []
+    separator = sys.argv[-1]
+    n = len(sys.argv)
     
-    list_number = []
-    
-    for i in range (10) :
-        for j in range (10) :
-            for k in range (10) :
-                if i < j < k and i != j != k :
- 
-                    list_number.append(f"{i}{j}{k}")
-                    
-    print (', '.join(map(str, list_number)))
-    
-sequence()
+    if len(sys.argv) >= 3 :
+        
+        for i in range (1,n-1) :
+            to_be_concat.append(sys.argv[i])
+
+        my_concat_result = my_concat(to_be_concat, separator)
+        print(my_concat_result[0])
+
+    else :
+        print(message_error)
+
+concat_exemple()

@@ -101,7 +101,6 @@ def split(argv, rule_to_split_in_ascii) :
     list_input.append('.') # Extend i range
     split = []
     split_cursor = 0
-    split_tempo = '' 
     split_output = []
     
     for i in range(0,n+1) :
@@ -123,7 +122,6 @@ def split(argv, rule_to_split_in_ascii) :
             
     return split_output
 
-# Dependence = index()
 def comparator_string(to_be_compared, to_be_confronted) :
     error_not_found = False
     
@@ -156,13 +154,35 @@ def comparator_string(to_be_compared, to_be_confronted) :
     else :
         return(error_not_found)
 
-def index(to_be_compared, to_be_confronted) :
-    for i in range (len(to_be_compared)) :
-
+def assemble(element1, element2) :
+    assembled = element1 + element2
+    return(assembled)
+        
+def split_index_moise(to_be_compared, to_be_confronted) :
+    markers = [9,11,32] # HT VT Tab ASCII
+    input_split = split(to_be_compared, markers)
+    space = ' '
+    assembled0 = ''
+    assembled1= ''
+    assembled = []
+    n = len(input_split)
     
-        if to_be_compared[i] == to_be_confronted : 
-            return i
-    return -1
+    for i in range(n) :
+        while input_split[i] == to_be_confronted :
+            for j in range(0,i-1):
+                assembled0 = assembled0 + assemble(input_split[j], space)
+            for k in range(i+1,n) :
+                assembled1 = assembled1 + assemble(space, input_split[k])
+            assembled.append(assembled0)
+            assembled.append(assembled1)
+            return(assembled)
 
-#def split_moise(to_be_compared, to_be_confronted) :
+def my_concat(to_be_concat, separator) : 
+    n = len(to_be_concat)
+    assembled = ''
     
+    for i in range (0,n) :
+        assembled = assembled + assemble(to_be_concat[i], separator)
+    return[assembled]
+
+def twins():
