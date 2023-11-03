@@ -185,4 +185,162 @@ def my_concat(to_be_concat, separator) :
         assembled = assembled + assemble(to_be_concat[i], separator)
     return[assembled]
 
-def twins():
+def twins(to_be_test):
+    to_be_test_sorted = sorted(to_be_test)
+    answer = []
+    n = len(to_be_test_sorted)
+    i = 0
+
+    while i < n:
+        if i == n-1 or to_be_test_sorted[i] != to_be_test_sorted[i+1]:
+            answer.append(to_be_test_sorted[i])
+            i += 1
+        else:
+            i += 2  # twins
+
+    return answer
+
+def one_by_one (to_be_clean):
+    to_be_clean = list(to_be_clean)
+    n = len(to_be_clean)
+    i = 0
+    
+    while i < n-1:
+        if to_be_clean[i] == to_be_clean[i+1]:
+            del to_be_clean[i]
+            n = len(to_be_clean)
+            i = i
+        else :
+            i += 1
+    clean = ''.join(to_be_clean)
+    
+    return clean
+
+def add_or_subt (to_be_operated):
+    
+    to_be_operated_list = to_be_operated[:-1]
+    to_be_applied = list(to_be_operated[-1])
+    to_be_operated_list.append(to_be_applied[1])
+    to_be_digit = to_be_operated_list
+    is_all_digit = Is_Digit(to_be_digit)
+    
+    if is_all_digit == True :
+        negative = "-"
+        positive = "+"
+        n = len(to_be_operated_list)
+        result = []
+        
+        if to_be_applied[0] == negative :
+            for i in range(n-1):
+                result.append(int(to_be_operated_list[i]) - int(to_be_applied[1]))
+                
+        elif to_be_applied[0] == positive :
+            for i in range(n-1):
+                result.append(int(to_be_operated_list[i]) + int(to_be_applied[1]))
+        
+        return result
+    
+def inspection(to_be_inspected, wanted) :
+    
+    golem = to_be_inspected
+    wanted = wanted.lower()
+    g = len(to_be_inspected)
+    ungolem = []
+
+    for i in range(0,g):
+        I = to_be_inspected[i]
+        result_comparator = comparator_string (I.lower(), wanted)
+        if result_comparator == True :
+            ungolem.append(i)
+    
+    ungolem.reverse()
+    
+    for k in ungolem :
+        del golem[k]
+            
+    return golem
+
+def add_element_in_sort_list(sort_list, to_be_add) :
+    
+    if Is_Digit(sort_list) == True and Is_Digit(to_be_add):
+        g = len(sort_list)
+        index = 0
+        new_list = []
+        
+        print(sort_list)
+        print(g)
+        
+        for i in range(g):  
+            if sort_list[i] <= to_be_add :
+                index = i
+        
+        for j in range(g) :
+            print(new_list)
+            if j < index :
+                new_list.append(sort_list[j])
+            elif j == index :
+                new_list.append(sort_list[j])
+                new_list.append(to_be_add)
+            else :
+                new_list.append(sort_list[j])
+        
+        return new_list
+
+    return "error"
+
+def index_wanted (element, wanted) :
+    g = len(element)
+    
+    for i in range (g) :
+        if element[i] == wanted :
+            return i
+
+def mix_and_sorted_list (list_a, list_b) :
+    new_list_sorted = []
+    g_a = len(list_a)
+    g_b = len(list_b)
+    i = 0
+    j = 0
+    
+    while i < g_a or j < g_b:
+        if i < g_a and (j == g_b or list_a[i] < list_b[j]):
+            new_list_sorted.append(list_a[i])
+            i += 1
+        elif j < g_b and (i == g_a or list_a[i] > list_b[j]):
+            new_list_sorted.append(list_b[j])
+            j += 1
+        else:
+            new_list_sorted.append(list_a[i])
+            new_list_sorted.append(list_a[j])
+            i += 1
+            j += 1
+           
+    return new_list_sorted
+
+def move_first_to_the_end (array):
+    array_0 = array[0]
+    new_array = array[1:]
+    new_array.append(array_0)
+    return new_array
+
+def found_extension(filename, extension):
+    if filename.endswith(extension):
+        return True
+    else:
+        return False
+    
+def is_all_digit(list):
+    content = []
+    g = len(list)
+    
+    for i in range(g):
+        if Is_Digit(list[i]) == True : 
+            content.append(True)
+        else :
+            content.append(False)
+    
+    if all(content) == True :
+        return True
+    else :
+        return False 
+    

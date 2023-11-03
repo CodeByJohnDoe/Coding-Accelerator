@@ -1,20 +1,21 @@
-# different number sequences
+# One by One
         
-# Time = 2h + 1h
-# Date = 23 & 26 september 2023
+# Time = 45 min
+# Date = 10 october 2023
 
+import sys
+sys.path.append("/home/uf/Desktop/Coding Accelerator/Python")
+from unbuilt_function import one_by_one
 
-def sequence():    
+def one_by_one_exemple() :
+    message_error = "error"
     
-    list_number = []
-    
-    for i in range (10) :
-        for j in range (10) :
-            for k in range (10) :
-                if i < j < k and i != j != k :
- 
-                    list_number.append(f"{i}{j}{k}")
-                    
-    print (', '.join(map(str, list_number)))
-    
-sequence()
+    if len(sys.argv) >= 2 :
+        to_be_clear  = sys.argv[1]
+        answer_one_by_one = one_by_one (to_be_clear)
+        print(answer_one_by_one)
+
+    else :
+        print(message_error)
+
+one_by_one_exemple()

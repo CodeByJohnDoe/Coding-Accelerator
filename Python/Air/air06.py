@@ -1,21 +1,29 @@
-
-# different number sequences
+# Found Golem
         
-# Time = 2h + 1h
-# Date = 23 & 26 september 2023
+# Time = 1h + 3h + 1 h
+# Date = 10 & 17 & 27 october 2023
 
+# weird instructions
 
-def sequence():    
+import sys
+sys.path.append("/home/uf/Desktop/Coding Accelerator/Python")
+from unbuilt_function import inspection
+
+def inspection_exemple() :
+    message_error = "error"
     
-    list_number = []
-    
-    for i in range (10) :
-        for j in range (10) :
-            for k in range (10) :
-                if i < j < k and i != j != k :
- 
-                    list_number.append(f"{i}{j}{k}")
-                    
-    print (', '.join(map(str, list_number)))
-    
-sequence()
+    if len(sys.argv) >= 3 :
+        to_be_inspected  = sys.argv[1:-1]
+        wanted = sys.argv[-1]
+        golem = inspection (to_be_inspected, wanted)
+        g = len(golem)
+        
+        if g > 1 :
+            print(', '.join(map(str,golem)))
+        else :
+            print(golem[0])
+
+    else :
+        print(message_error)
+
+inspection_exemple()
