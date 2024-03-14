@@ -344,3 +344,25 @@ def is_all_digit(list):
     else :
         return False 
     
+def check_unit(name, extension, tests, wanted, counter_index, counter_success):
+    
+    gt = len(tests)
+    gw = len(wanted)
+    file_to_open = name + "." + extension
+    sent = ['failure',"1" ,gt, name, counter_success, counter_index]
+        
+    if gt == gw :
+        
+        for i in range(gt):
+            call_exercice = globals().get(file_to_open0)
+                        
+            if call_exercice == wanted[i]:
+                sent[0] = 'success'
+                sent[1] += 1
+            
+            else :
+                sent[1] += 1
+                
+    else :
+        sent[0] = 'error'
+        return sent

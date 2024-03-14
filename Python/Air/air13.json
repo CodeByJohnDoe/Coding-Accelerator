@@ -1,0 +1,47 @@
+{
+    "air00.py": [
+        {
+            "test_0": {
+                "input": ["Bonjour les gars"],
+                "expected_output": ["Bonjour", "les", "gars"]
+            }
+        },
+        {
+            "test_1": {
+                "input": ["dodola mie"],
+                "expected_output": ["dodola", "mie"]
+            }
+        },
+        {
+            "test_2": {
+                "input": ["dodola mie"],
+                "expected_output": ["dodola", "mie"]
+            }
+        },        {
+            "test_3": {
+                "input": ["dodola mie"],
+                "expected_output": ["dodola", "mie"]
+            }
+        }
+    ],
+    "air01.py": [
+        {
+            "test_0": {
+                "input": ["Bonjour les gars"],
+                "expected_output": ["Bonjour", "les", "gars"]
+            }
+        },
+        {
+            "test_1": {
+                "input": ["dodola mie"],
+                "expected_output": ["dodola", "mie"]
+            }
+        },
+        {
+            "test_2": {
+                "input": ["dodola mie"],
+                "expected_output": ["dodola", "mie"]
+            }
+        }
+    ]
+}
