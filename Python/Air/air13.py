@@ -7,12 +7,12 @@ import sys
 import os
 import json
 import subprocess
-import glob
+from colorama import Fore, Back, Style
+
 
 path = "/home/uf/Desktop/Coding Accelerator/Python"
 sys.path.append(path)
 from unbuilt_function import *
-
 
 ## Tools box 
 
@@ -52,9 +52,9 @@ def tool_box():
 
     # Found file length / Name
     check_list_files_names = os.listdir(path)
-    len_list_files_names = len(check_list_files_names)
+    len_list_files_names = len(check_list_files_names) 
     
-    if len_list_files_names == 6:
+    if len_list_files_names == 7:
         debbug_message.append('match Length')
 
     else:
@@ -87,46 +87,63 @@ def load_json() :
 ## The unit test
 
 def unit_test() :
-
+    
     if tool_box() is None:
 
         data_json = load_json()
-
-        # Arrange data from json
-        name_data_json = list(data_json.keys())
-        len_datajson = len(data_json) -1
+          
+        # Text color
+        COLOR_SUCCESS = Fore.GREEN
+        COLOR_FAILURE = Fore.RED
+        COLOR_RESULT = Fore.YELLOW
+        RESET_COLOR = Style.RESET_ALL
         
         # Listing files
-        list_files_names = glob.glob(path + '/*')
-
-        # 
-        with open(os.path.join(path, name_data_json[0],"r")) as f: 
-            print(f.read())
-
+        path = "/home/uf/Desktop/Coding Accelerator/Python/Air"
         
-
-
-
-
         # Initialize counters                       
         pass_test_counter = 0
-        test_counter_done = 0                  
-
-        number_of_test = len(data_json.get(name_data_json[0], []))
-        print(number_of_test)
-                    
-        for test_name, tests_list in data_json.items():
+        total_test_counter = 0  
+                
+        # Extracting data for current test
+        for json_obj in data_json:
+            sub_test_counter = 0  
+            sub_pass_test_counter = 0
             
-            # Process each test in the list
-            for test in tests_list:
+            # Extracting data for current test
+            current_data_name = json_obj.get("name", "")
+            script_path = os.path.join(path, current_data_name)     
+            
+            number_of_test = len(json_obj.get('input', []))
+            
+            for i in range (number_of_test) :  
+                current_data_input = json_obj.get('input', [])[i]
+                current_data_target = json_obj.get('expected_output', [])[i]     
                 
-                # Extract details of the test
-                details_test = (test[test_name])
+                # Start the script process and send input data one by one
+                args = ['/usr/bin/python3', script_path] + current_data_input
+                process = subprocess.Popen(args, stdout=subprocess.PIPE, stderr=subprocess.PIPE, text=True)
                 
-                # Send test
-                input_test = details_test["input"]  # Get input for the test
+                # Read the output from the process
+                stdout, stderr = process.communicate()
                 
-                # Catch result
-                result = subprocess.run(["python", ] + input_test, capture_output=True, check=True)
+                compare_data_target =[]
+                compare_data_target.append(stdout)
+                
+                # Update counters and see result
+                if current_data_target == compare_data_target :
+                    pass_test_counter += 1
+                    sub_pass_test_counter += 1
+                    print(f"{COLOR_SUCCESS}{current_data_name}({sub_pass_test_counter}/{number_of_test}): success{RESET_COLOR}")
+
+                else :
+                    print(f"{COLOR_FAILURE}{current_data_name}({sub_pass_test_counter}/{number_of_test}): failure {RESET_COLOR}")
+                    
+                total_test_counter+= 1
+                sub_test_counter += 1
+
+        print(f"{COLOR_RESULT}Total success: ({pass_test_counter}/{total_test_counter}){RESET_COLOR}")
+
+
 
 unit_test()

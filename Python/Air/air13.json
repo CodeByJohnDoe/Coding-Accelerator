@@ -1,47 +1,13 @@
+
+[{
+    "name": "air00.py",
+    "id": "0",
+    "input": [["Bonjour les gars"],["e","r"]],
+    "expected_output": [["Bonjour\nles\ngars\n"],["error\n"]]
+},
 {
-    "air00.py": [
-        {
-            "test_0": {
-                "input": ["Bonjour les gars"],
-                "expected_output": ["Bonjour", "les", "gars"]
-            }
-        },
-        {
-            "test_1": {
-                "input": ["dodola mie"],
-                "expected_output": ["dodola", "mie"]
-            }
-        },
-        {
-            "test_2": {
-                "input": ["dodola mie"],
-                "expected_output": ["dodola", "mie"]
-            }
-        },        {
-            "test_3": {
-                "input": ["dodola mie"],
-                "expected_output": ["dodola", "mie"]
-            }
-        }
-    ],
-    "air01.py": [
-        {
-            "test_0": {
-                "input": ["Bonjour les gars"],
-                "expected_output": ["Bonjour", "les", "gars"]
-            }
-        },
-        {
-            "test_1": {
-                "input": ["dodola mie"],
-                "expected_output": ["dodola", "mie"]
-            }
-        },
-        {
-            "test_2": {
-                "input": ["dodola mie"],
-                "expected_output": ["dodola", "mie"]
-            }
-        }
-    ]
-}
+    "name": "air01.py",
+    "id": "1",
+    "input": [["Bonjour les gars"],["dodola mie"],["eer e"]],
+    "expected_output": [["Bonjour", "les", "gars"],["dodola","mie"],["eer","e"]]
+}]

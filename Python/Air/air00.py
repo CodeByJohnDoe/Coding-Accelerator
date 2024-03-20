@@ -7,6 +7,7 @@ import sys
 sys.path.append("/home/uf/Desktop/Coding Accelerator/Python")
 from unbuilt_function import split
 
+
 def split_exemple() :
     message_error = "error"
     
